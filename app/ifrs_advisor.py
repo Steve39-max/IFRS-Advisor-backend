@@ -118,7 +118,7 @@ def _collect_response(data: dict) -> dict:
     return {"answer": "\n".join(text_parts), "citations": citations, "sources": sources}
 
 
-def ask_ifrs_advisor(question: str, history: list[dict] | None = None, file_ids: list[str] | None = None) -> dict:
+def ask_ifrs_advisor_structured(question: str, history: list[dict] | None = None, file_ids: list[str] | None = None) -> dict:
     settings = get_settings()
     if not settings.vector_store_id:
         raise RuntimeError("The International GAAP knowledge source is not configured")
@@ -154,3 +154,8 @@ def ask_ifrs_advisor(question: str, history: list[dict] | None = None, file_ids:
         response = client.post("/responses", json=payload)
         response.raise_for_status()
         return _collect_response(response.json())
+
+
+def ask_ifrs_advisor(question: str, history: list[dict] | None = None) -> str:
+    """Backward-compatible response for the currently deployed API."""
+    return ask_ifrs_advisor_structured(question, history)["answer"]
