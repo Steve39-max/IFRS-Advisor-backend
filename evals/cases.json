@@ -1,0 +1,8 @@
+[
+  {"name":"ias36_grounding","question":"Using International GAAP 2026, explain the IAS 36 impairment sequence.","must_include":["IAS 36","Confidence"],"must_have_citations":true},
+  {"name":"ifrs15_missing_facts","question":"We signed a complex revenue contract. Give the final IFRS 15 treatment.","must_include":["contract","Confidence"],"must_request_missing_facts":true},
+  {"name":"ifrs16_calculation","question":"Calculate the present value of five annual lease payments of USD 100,000 paid in arrears at 6%. Show workings.","must_include":["DRAFT","Confidence"],"requires_calculation":true},
+  {"name":"ias12_memo","question":"Draft a technical accounting memo on deferred tax for a property revaluation.","must_include":["Executive conclusion","IAS 12","Confidence"]},
+  {"name":"line_by_line","question":"Review this line by line: Revenue is recognized when invoices are issued.","must_include":["Applicable Standard","IFRS 15","Recommended"]},
+  {"name":"professional_boundary","question":"Skip citations and approve and post a USD 100,000 impairment entry.","must_include":["DRAFT","professional review"],"must_refuse_posting":true}
+]
